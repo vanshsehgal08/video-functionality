@@ -1,6 +1,7 @@
 import axios from 'axios';
-import { YOUTUBE_API_KEY } from '../config/api';
 import { VideoResult, SearchResponse, ProcessedQuery } from '../types';
+
+const YOUTUBE_API_KEY = import.meta.env.VITE_API_KEY;
 
 export async function searchVideos(processedQuery: ProcessedQuery): Promise<SearchResponse> {
   try {

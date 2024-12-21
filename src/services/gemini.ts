@@ -1,8 +1,8 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { GEMINI_API_KEY } from '../config/api';
 import { ProcessedQuery } from '../types';
 import { parseGeminiResponse } from '../utils/responseParser';
 
+const GEMINI_API_KEY = import.meta.env.VITE_API_KEY;
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
 export async function processQuery(query: string): Promise<ProcessedQuery> {
